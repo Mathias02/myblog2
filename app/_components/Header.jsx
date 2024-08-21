@@ -6,7 +6,7 @@ import React from 'react'
 const Header = () => {
 
   return (
-    <div className='p-5 bg-gray-50'>
+    <div className='p-5 bg-gray-100'>
         <div className='flex justify-between'>
             <div className='flex items-center gap-6'>
                 <Image src='/logo.svg' width={180} height={180} alt='logo'/>
