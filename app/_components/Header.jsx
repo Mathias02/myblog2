@@ -19,7 +19,7 @@ const Header = () => {
                     </Link>
                 </ul>
             </div>
-            <Button className='hover:bg-[#AC8049] hover:text-white'>Get started</Button>
+            <Button className='hover:bg-[#AC8049] text-white rounded bg-primary'>Get started</Button>
         </div>
     </div>
   )
