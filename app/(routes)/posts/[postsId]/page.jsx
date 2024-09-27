@@ -1,7 +1,6 @@
 "use client"
-
-import Comment from '@/app/_components/Comment';
-import FormComments from '@/app/_components/FormComments';
+import AddComments from '@/app/_components/AddComment';
+import Comments from '@/app/_components/Comments';
 import GlobalApi from '@/app/_utils/GlobalApi';
 import React, { useEffect, useState } from 'react'
 
@@ -11,7 +10,9 @@ const [single,setSingle] = useState([]);
  
 
 useEffect(() =>{
-  singleData()
+  singleData();
+  console.log(params.postsId)
+
 },[])
 
 const singleData = () =>{
@@ -20,7 +21,7 @@ const singleData = () =>{
   })
 }
   return (
-    <div className='border'>
+    <div className='mt-8'>
       <div>{single.map((item,index) => {
         return(
           <div key={index}>
@@ -31,10 +32,9 @@ const singleData = () =>{
              </div>
           </div>
         )
-      })}</div> 
-  
-      <Comment />
-      <FormComments />
+      })}</div>
+      <Comments  commentId={params.postsId} />
+      <AddComments  commentId={params.postsId}  />
     </div>
   )
 }
