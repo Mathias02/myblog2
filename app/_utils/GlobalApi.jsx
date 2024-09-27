@@ -9,7 +9,7 @@ const getPosts = () => axiosClient.get('/posts?populate=*').then((resp) => resp.
 const postData = (data) => axiosClient.post('/posts',data);
 const postId = (id) => axiosClient.get(`/posts?populate=*&[filters][id]=${id}`);
 const addComments = (data) => axiosClient.post('/comments',data);
-const getComments = (id) => axiosClient.get(`/posts?populate=*&[filters][id]=${id}&[populate=*][comments][populate=*][data]`).then((resp) => resp.data.data)
+const getComments = (id) => axiosClient.get(`/posts?populate=*&[filters][id]=${id}`);
 
 export default {
     getPosts,

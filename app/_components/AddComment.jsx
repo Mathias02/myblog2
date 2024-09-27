@@ -4,21 +4,20 @@ import GlobalApi from '../_utils/GlobalApi';
 
 const AddComment = ({commentId}) => {
     const [content,setContent] = useState('');
-    const [container,setContainers] = useState([])
+
 
     const router = useRouter();
 
-    const data = {
+    const comment = {
         data: {
-            id:commentId,content
+         content, commentId
         }
     }
 
     function comments(e) {
         e.preventDefault();
         console.log(content);
-        const addedComment = GlobalApi.addComments(data);
-        setContainers(addedComment);
+        GlobalApi.addComments(comment);
         setContent('');
         router.refresh(); 
     }
