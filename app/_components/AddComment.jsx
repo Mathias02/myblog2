@@ -1,5 +1,7 @@
+"use client"
+
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import GlobalApi from '../_utils/GlobalApi';
 
 const AddComment = ({commentId}) => {
@@ -7,19 +9,24 @@ const AddComment = ({commentId}) => {
 
 
     const router = useRouter();
+    
+    useEffect(() =>{
+        console.log(commentId);
+    },[commentId])
 
-    const comment = {
+    const data1 = {
         data: {
-         content, commentId
+         id: commentId, content
         }
     }
+
 
     function comments(e) {
         e.preventDefault();
         console.log(content);
-        GlobalApi.addComments(comment);
+        GlobalApi.addComments(commentId);
         setContent('');
-        router.refresh(); 
+        router.refresh(''); 
     }
 
   return (

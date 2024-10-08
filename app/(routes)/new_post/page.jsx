@@ -3,6 +3,9 @@
 import GlobalApi from '@/app/_utils/GlobalApi';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
+
+
 
 const page = () => {
   
@@ -25,7 +28,9 @@ const page = () => {
     setTitle('');
     setContent('');
     router.push('/posts');
-    router.refresh()
+    router.refresh();
+    toast('post successfully created')
+
   }
 
   return (
